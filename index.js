@@ -30,9 +30,6 @@
             var template = $dom.attr('data-template');
             var responseType = $dom.attr('data-response-type') || 'json';
 
-            template = $(template).text().replace(/^\s*|\s*$/, '');
-
-            var tmpl = Handlebars.compile(template);
 
             if (!api) {
 
@@ -49,9 +46,13 @@
             // makes a request
             qwest[method](api, params, {responseType: responseType}).then(function (resp) {
 
-                var html = tmpl(resp);
+                templateString = $(template).text().replace(/^\s*|\s*$/, '');
 
-                $dom.html(html);
+                dust.renderSource(templateString, resp, function (err, html) {
+
+                    $dom.html(html);
+
+                });
 
             });
 
