@@ -7,7 +7,7 @@
 
         var result = {};
 
-        $.each($dom.attribute, function (attr) {
+        $.each($dom[0].attributes, function (attr) {
 
             result[attr.name] = attr.value;
 
