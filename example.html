@@ -1,0 +1,29 @@
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/qwest/qwest.min.js"></script>
+<script src="./bower_components/dustjs-linkedin/dist/dust-full.min.js"></script>
+<script src="./index.js"></script>
+
+
+<div
+  data-api="https://api.github.com/users/kt3k/repos"
+  data-method="get"
+  data-template="#tpl-repos"
+  class="ajax-view"></div>
+
+<script type="text/x-dustjs" id="tpl-repos">
+  <ul>
+    {#.}
+    <li>
+      <div>
+        <a href="{html_url}">{full_name}</a>
+        <ul>
+          <li>language: {language}</li>
+          <li>star: {stargazers_count}</li>
+          <li>issues: {open_issues}</li>
+          <li>created_at: {created_at}</li>
+        </ul>
+      </div>
+    </li>
+    {/.}
+  </ul>
+</script>
