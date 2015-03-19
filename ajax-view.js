@@ -1,5 +1,5 @@
 /**
- * ajax-view.js v0.1.2
+ * ajax-view.js v0.1.3
  * author: Yoshiya Hinosawa ( http://github.com/kt3k )
  * license: MIT
  */
