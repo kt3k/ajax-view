@@ -49,3 +49,7 @@ The above creates `GET` request to the endpoint `https://api.github.com/users/gi
 ```sh
 bower install --save ajax-view
 ```
+
+# License
+
+[MIT](https://github.com/kt3k/ajax-view/blob/master/LICENSE)
