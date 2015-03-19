@@ -3,3 +3,4 @@ version: 0.1.2
 files:
   README.md: v%.%.%
   bower.json: '"version": "%.%.%"'
+  ajax-view.js: v%.%.%

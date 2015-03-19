@@ -1,4 +1,8 @@
-
+/**
+ * ajax-view.js v0.1.2
+ * author: Yoshiya Hinosawa ( http://github.com/kt3k )
+ * license: MIT
+ */
 
 (function ($) {
     'use strict';
