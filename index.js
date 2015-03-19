@@ -46,13 +46,17 @@
             // makes a request
             qwest[method](api, params, {responseType: responseType}).then(function (resp) {
 
-                templateString = $(template).text().replace(/^\s*|\s*$/, '');
+                var templateString = $(template).text().replace(/^\s*|\s*$/g, '');
 
                 dust.renderSource(templateString, resp, function (err, html) {
 
                     $dom.html(html);
 
                 });
+
+            }).catch(function (e) {
+
+                console.log(e);
 
             });
 
