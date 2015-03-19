@@ -42,3 +42,10 @@ Example:
 ```
 
 The above creates `GET` request to the endpoint `https://api.github.com/users/github/repos`, render it with template of `#tpl-repos` and insert its result into the div.
+
+
+# Install
+
+```sh
+bower install --save ajax-view
+```
