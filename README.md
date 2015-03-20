@@ -1,7 +1,6 @@
 # ajax-view v0.1.3
 
-> Creates REST request and render with dustjs template,
-> No javascript with API rendering.
+> Automatically creates a REST request, renders it with dustjs and inserts it without any JavaScript
 
 [demo](http://kt3k.github.io/ajax-view/example.html)
 
@@ -42,6 +41,15 @@ Example:
 ```
 
 The above creates `GET` request to the endpoint `https://api.github.com/users/github/repos`, render it with template of `#tpl-repos` and insert its result into the div.
+
+
+## Manual initialization
+
+`ajax-view.js` automatically initialize `.ajax-view` elements at `$(document).ready`. If you need to initialize after that, you can do it by triggering `init.ajax-view` event on `document` element.
+
+```js
+$(document).trigger('init.ajax-view'); //=> initialize `.ajax-view` elements
+```
 
 
 # Install
