@@ -4,7 +4,7 @@
  * license: MIT
  */
 
-(function ($) {
+(function ($, qwest, dust) {
     'use strict';
 
     var getDataParams = function ($dom) {
@@ -77,4 +77,4 @@
 
     });
 
-}(window.jQuery));
+}(window.jQuery, window.qwest, window.dust));
