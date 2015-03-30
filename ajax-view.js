@@ -7,6 +7,14 @@
 (function ($, qwest, dust) {
     'use strict';
 
+    var CLASS = 'ajax-view';
+    var CLASS_INIT = 'ajax-view-initialized';
+    var SELECTOR = '.' + CLASS + ':not(.' + CLASS_INIT + ')';
+
+    var EVENT_INIT = 'init.ajax-view';
+    var EVENT_LOADED = 'loaded.ajax-view';
+    var EVENT_ERROR = 'error.ajax-view';
+
     var getDataParams = function ($dom) {
 
         var result = {};
@@ -22,11 +30,11 @@
 
     var initAjaxView = function () {
 
-        $('.ajax-view:not(.ajax-view-started)').each(function () {
+        $(SELECTOR).each(function () {
 
             var $dom = $(this);
 
-            $dom.addClass('ajax-view-started');
+            $dom.addClass(CLASS_INIT);
 
             var api = $dom.attr('data-api');
             var method = $dom.attr('data-method') || 'get';
@@ -56,9 +64,13 @@
 
                     $dom.html(html);
 
+                    $dom.trigger(EVENT_LOADED);
+
                 });
 
             }).catch(function (e) {
+
+                $dom.trigger(EVENT_ERROR);
 
                 console.log(e);
 
@@ -69,11 +81,11 @@
     };
 
 
-    $(document).on('init.ajax-view', initAjaxView);
+    $(document).on(EVENT_INIT, initAjaxView);
 
     $(document).ready(function () {
 
-        $(document).trigger('init.ajax-view');
+        $(document).trigger(EVENT_INIT);
 
     });
 
