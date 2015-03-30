@@ -1,4 +1,4 @@
-# ajax-view v0.1.4
+# ajax-view v0.2.0
 
 > Automatically creates a REST request, renders it with dustjs and inserts it without any JavaScript
 
