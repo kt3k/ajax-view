@@ -51,6 +51,45 @@ The above creates `GET` request to the endpoint `https://api.github.com/users/gi
 $(document).trigger('init.ajax-view'); //=> initialize `.ajax-view` elements
 ```
 
+# Events
+
+## `loaded.ajax-view`
+
+This is triggered when the `ajax-view` successfully gets api response and renders it.
+
+```html
+<p class="ajax-view" data-api="/api/users/1"></p>
+
+<script>
+$('.ajax-view).on('loaded.ajax-view', function () {
+
+    console.log('.ajax-view successfully loaded!');
+
+});
+</script>
+```
+
+## `error.ajax-view'
+
+This is triggered when the `ajax-view` fails to get response or fails to render it.
+
+```html
+<p class="ajax-view" data-api="/api/users/1"></p>
+
+<script>
+$('.ajax-view).on('error.ajax-view', function (event, error) {
+
+    console.log('.ajax-view failed!');
+
+    console.log(error);
+    console.log(error.stack);
+
+});
+</script>
+```
+
+The second argument of handler (in jQuery style) is error object. You can inspect what was the actual error.
+
 
 # Install
 
