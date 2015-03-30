@@ -70,7 +70,7 @@
 
             }).catch(function (e) {
 
-                $dom.trigger(EVENT_ERROR);
+                $dom.trigger(EVENT_ERROR, [e]);
 
                 console.log(e);
 
